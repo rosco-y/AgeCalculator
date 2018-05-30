@@ -61,7 +61,7 @@ namespace AgeCalculator
         string NextBirthday(DateTime nextBirthday)
         {
             string nextDate = string.Empty;
-            TimeSpan untilThen = DateTime.Now.Subtract(nextBirthday); //nextBirthday.Subtract(DateTime.Now);
+            TimeSpan untilThen = DateTime.Now.Subtract(nextBirthday); // nextBirthday.Subtract(DateTime.Now); 
 
             nextDate = $"and your next birthday celebration is in: {Environment.NewLine} {untilThen.TotalDays:N0} days!";// {untilThen.Hours} hrs {untilThen.Minutes} minutes and {untilThen.Seconds}";
 
