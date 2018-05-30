@@ -60,10 +60,10 @@
             // txtAgeReport
             // 
             this.txtAgeReport.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAgeReport.Location = new System.Drawing.Point(163, 113);
+            this.txtAgeReport.Location = new System.Drawing.Point(76, 108);
             this.txtAgeReport.Multiline = true;
             this.txtAgeReport.Name = "txtAgeReport";
-            this.txtAgeReport.Size = new System.Drawing.Size(447, 291);
+            this.txtAgeReport.Size = new System.Drawing.Size(614, 458);
             this.txtAgeReport.TabIndex = 0;
             // 
             // Form1

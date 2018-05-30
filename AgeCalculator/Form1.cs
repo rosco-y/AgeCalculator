@@ -31,7 +31,6 @@ namespace AgeCalculator
 
         private void tmrAging_Tick(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
 
             TimeSpan totalTime = DateTime.Now.Subtract(_birthDate);
 
@@ -51,8 +50,24 @@ namespace AgeCalculator
             ageReport.Append($"\tor {iDays:N0} days old" + Environment.NewLine);
             ageReport.Append($"\tor {iHours:N0} hours old" + Environment.NewLine);
             ageReport.Append($"\tor {iMinutes:N0} minutes old" + Environment.NewLine);
-            ageReport.Append($"\tor {iSeconds:N0} seconds old." + Environment.NewLine);
+            ageReport.Append($"\tor {iSeconds:N0} seconds old." + Environment.NewLine + Environment.NewLine);
+            ageReport.Append(NextBirthday(_birthDate.AddYears(iYear)));
             txtAgeReport.Text = ageReport.ToString();
+
+            
+
         }
+
+        string NextBirthday(DateTime nextBirthday)
+        {
+            string nextDate = string.Empty;
+            TimeSpan untilThen = DateTime.Now.Subtract(nextBirthday); //nextBirthday.Subtract(DateTime.Now);
+
+            nextDate = $"and your next birthday celebration is in: {Environment.NewLine} {untilThen.TotalDays:N0} days!";// {untilThen.Hours} hrs {untilThen.Minutes} minutes and {untilThen.Seconds}";
+
+
+            return nextDate;
+        }
+
     }
 }
