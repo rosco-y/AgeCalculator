@@ -21,12 +21,14 @@ namespace AgeCalculator
         {
             InitializeComponent();
             ageReport = new StringBuilder();
+            birthTime.Enabled = chkUseTime.Checked;
         }
 
         private void cmdCalculateAge_Click(object sender, EventArgs e)
         {
             _birthDate = dtBirthDate.Value;
-            this.Text = _birthDate.ToLongDateString() + _birthDate.ToLongTimeString();
+            if (chkUseTime.Checked)
+                _birthDate = _birthDate.Date.Add(birthTime.Value.TimeOfDay);            
             tmrAging.Enabled = true;
         }
 
@@ -70,5 +72,9 @@ namespace AgeCalculator
             return nextDate;
         }
 
+        private void chkUseTime_CheckedChanged(object sender, EventArgs e)
+        {
+            birthTime.Enabled = chkUseTime.Checked;
+        }
     }
 }
