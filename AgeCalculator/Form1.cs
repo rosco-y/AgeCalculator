@@ -42,7 +42,7 @@ namespace AgeCalculator
             int iMonths = (int)(iYear * 12);
             int iWeeks = (int)(iMonths / ApproxDaysPerMonth) * 7;
             int iHours = (int)totalTime.TotalHours;
-            int iMinutes = (int)totalTime.TotalHours;
+            int iMinutes = (int)totalTime.TotalHours * 60;
             int iSeconds = (int)totalTime.TotalSeconds;
 
             //StringBuilder ageReport = new StringBuilder();
